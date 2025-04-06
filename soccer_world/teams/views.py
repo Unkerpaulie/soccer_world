@@ -22,8 +22,8 @@ class TeamStatisticsView(views.APIView):
 class TeamViewSet(viewsets.ModelViewSet):  
     queryset = Team.objects.all()  
     serializer_class = TeamSerializer  
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]  
-
+    # permission_classes = [permissions.IsAuthenticatedOrReadOnly]  
+    permission_classes = [permissions.AllowAny]  # Changed this line to AllowAny
     # @api_view(["GET"])  
     # def list(self, request, *args, **kwargs):  
     #     return super().list(request, *args, **kwargs)  
